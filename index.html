@@ -7,7 +7,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
@@ -122,25 +123,65 @@
           margin-left: 2rem;
         }
       }
+
+      .nav-link {
+        position: relative;
+      }
+
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -4px;
+        left: 0;
+        background-color: #ec4899;
+        transition: width 0.3s ease;
+      }
+
+      .nav-link.active::after {
+        width: 100%;
+      }
     </style>
   </head>
   <body>
     <!-- Navbar -->
     <nav class="fixed w-full z-50 bg-black/80 backdrop-blur-sm">
       <div
-        class="container mx-auto px-4 py-3 flex justify-between items-center">
-        <img src="./img/Logo-premium.png" alt="Logo" class="h-16 md:h-20" />
+        class="container mx-auto px-4 py-3 flex justify-between items-center"
+      >
+        <a href="javascript:void(0)" class="logo-refresh">
+          <img
+            src="./img/Logo-premium.png"
+            alt="Logo"
+            class="h-16 mx-auto md:mx-0 cursor-pointer hover:scale-105 transition-transform"
+          />
+        </a>
 
         <!-- Desktop Menu -->
         <div class="hidden md:flex gap-8 text-white">
-          <a href="#product" class="hover:text-pink-500 transition-colors"
+          <a
+            href="#product"
+            class="nav-link hover:text-pink-500 transition-colors"
+            data-section="product"
             >Product</a
           >
-          <a href="#timeline" class="hover:text-pink-500 transition-colors"
+          <a
+            href="#timeline"
+            class="nav-link hover:text-pink-500 transition-colors"
+            data-section="timeline"
             >Timeline</a
           >
-          <a href="#faq" class="hover:text-pink-500 transition-colors">FAQ</a>
-          <a href="#contact" class="hover:text-pink-500 transition-colors"
+          <a
+            href="#faq"
+            class="nav-link hover:text-pink-500 transition-colors"
+            data-section="faq"
+            >FAQ</a
+          >
+          <a
+            href="#contact"
+            class="nav-link hover:text-pink-500 transition-colors"
+            data-section="contact"
             >Contact</a
           >
         </div>
@@ -189,22 +230,26 @@
       <img
         src="./img/wave.png"
         alt="Wave"
-        class="absolute bottom-0 left-0 w-full z-0" />
+        class="absolute bottom-0 left-0 w-full z-0"
+      />
 
       <!-- Container -->
       <div
-        class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between relative z-10 pt-24 md:pt-32">
+        class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between relative z-10 pt-24 md:pt-32"
+      >
         <!-- Gambar -->
         <div class="w-full md:w-1/2 flex justify-center mb-8 md:mb-0">
           <img
             src="./img/about.png"
             alt="Hero Illustration"
-            class="w-3/4 md:w-full max-w-md md:max-w-lg" />
+            class="w-3/4 md:w-full max-w-md md:max-w-lg"
+          />
         </div>
 
         <!-- Teks dan Tombol -->
         <div
-          class="w-full md:w-1/2 text-center md:text-left space-y-6 md:space-y-8">
+          class="w-full md:w-1/2 text-center md:text-left space-y-6 md:space-y-8"
+        >
           <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">
             Premium <span class="text-pink-500">Everyday</span>
           </h1>
@@ -214,7 +259,8 @@
           <div class="flex justify-center md:justify-start">
             <a
               href="#product"
-              class="bg-pink-500 text-white px-8 py-3 rounded-full shadow-lg hover:bg-pink-600 transition-transform transform hover:scale-105">
+              class="bg-pink-500 text-white px-8 py-3 rounded-full shadow-lg hover:bg-pink-600 transition-transform transform hover:scale-105"
+            >
               Pesan Disini
             </a>
           </div>
@@ -223,19 +269,19 @@
     </section>
 
     <!-- Product Section -->
-<section id="product" class="py-20 bg-black">
-  <div class="container mx-auto px-4">
-    <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-16">
-      PRODUCT
-    </h2>
-    <div
-      id="product-container"
-      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-      <!-- Product cards will be dynamically inserted here -->
-    </div>
-  </div>
-</section>
-
+    <section id="product" class="py-20 bg-black">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-16">
+          PRODUCT
+        </h2>
+        <div
+          id="product-container"
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+        >
+          <!-- Product cards will be dynamically inserted here -->
+        </div>
+      </div>
+    </section>
 
     <!-- Timeline Section -->
     <section id="timeline" class="py-20 bg-black">
@@ -303,18 +349,22 @@
           <input
             type="text"
             placeholder="Full Name"
-            class="w-full px-4 py-3 rounded-lg bg-gray-800/50 backdrop-blur-sm text-white border border-gray-700 focus:border-pink-500 focus:outline-none" />
+            class="w-full px-4 py-3 rounded-lg bg-gray-800/50 backdrop-blur-sm text-white border border-gray-700 focus:border-pink-500 focus:outline-none"
+          />
           <input
             type="email"
             placeholder="Email"
-            class="w-full px-4 py-3 rounded-lg bg-gray-800/50 backdrop-blur-sm text-white border border-gray-700 focus:border-pink-500 focus:outline-none" />
+            class="w-full px-4 py-3 rounded-lg bg-gray-800/50 backdrop-blur-sm text-white border border-gray-700 focus:border-pink-500 focus:outline-none"
+          />
           <textarea
             placeholder="Your Message"
             rows="4"
-            class="w-full px-4 py-3 rounded-lg bg-gray-800/50 backdrop-blur-sm text-white border border-gray-700 focus:border-pink-500 focus:outline-none"></textarea>
+            class="w-full px-4 py-3 rounded-lg bg-gray-800/50 backdrop-blur-sm text-white border border-gray-700 focus:border-pink-500 focus:outline-none"
+          ></textarea>
           <button
             type="submit"
-            class="w-full bg-pink-500 text-white py-3 rounded-lg hover:bg-pink-600 transition-colors">
+            class="w-full bg-pink-500 text-white py-3 rounded-lg hover:bg-pink-600 transition-colors"
+          >
             Send Message
           </button>
         </form>
@@ -342,12 +392,14 @@
             <div class="flex justify-center md:justify-start gap-4">
               <a
                 href="https://www.instagram.com/premiumeveryday_/"
-                class="text-white hover:text-pink-500 transition-colors">
+                class="text-white hover:text-pink-500 transition-colors"
+              >
                 <i class="fab fa-instagram text-2xl"></i>
               </a>
               <a
                 href="#"
-                class="text-white hover:text-pink-500 transition-colors">
+                class="text-white hover:text-pink-500 transition-colors"
+              >
                 <i class="fab fa-whatsapp text-2xl"></i>
               </a>
             </div>
@@ -380,10 +432,13 @@
 
           <!-- Logo and Branding -->
           <div class="text-center md:text-left">
-            <img
-              src="./img/Logo-premium.png"
-              alt="Logo"
-              class="h-16 mx-auto md:mx-0" />
+            <a href="#" class="back-to-top">
+              <img
+                src="./img/Logo-premium.png"
+                alt="Logo"
+                class="h-16 mx-auto md:mx-0 cursor-pointer hover:scale-105 transition-transform"
+              />
+            </a>
             <p class="text-gray-400 mt-4">
               © 2025 PremiumEveryday. All Rights Reserved.
             </p>
@@ -516,14 +571,17 @@
         },
       ];
 
-      // Mobile Menu Functionality
       document.addEventListener("DOMContentLoaded", () => {
+        // Inisialisasi variabel untuk menu
         const menuBtn = document.getElementById("menu-btn");
         const closeBtn = document.getElementById("close-menu");
         const mobileMenu = document.querySelector(".mobile-menu");
         const menuOverlay = document.querySelector(".menu-overlay");
         const mobileMenuLinks = document.querySelectorAll(".mobile-menu a");
+        const navLinks = document.querySelectorAll(".nav-link");
+        const sections = document.querySelectorAll("section[id]");
 
+        // Mobile Menu Toggle
         const toggleMenu = () => {
           mobileMenu.classList.toggle("active");
           menuOverlay.classList.toggle("active");
@@ -536,6 +594,7 @@
         closeBtn.addEventListener("click", toggleMenu);
         menuOverlay.addEventListener("click", toggleMenu);
 
+        // Mobile Menu Links Handler
         mobileMenuLinks.forEach((link) => {
           link.addEventListener("click", () => {
             toggleMenu();
@@ -557,39 +616,33 @@
         // Generate Product Cards
         function generateProductCards() {
           const container = document.getElementById("product-container");
-          const userPhoneNumber = "6285158442747"; // Ganti dengan nomor WhatsApp Anda
+          const userPhoneNumber = "6285158442747";
 
           products.forEach((product) => {
             const card = document.createElement("div");
             card.className = "product-card";
             card.innerHTML = `
-                <img src="img/${product.image}" alt="${product.name}" class="product-image mb-4">
-                <h3 class="font-bold text-xl mb-2 text-gray-800">${product.name}</h3>
-                <p class="text-gray-600 mb-2">${product.type}</p>
-                <p class="text-pink-500 font-bold mb-2">${product.price}</p>
-                <p class="text-gray-600 mb-2">${product.privatePrice}</p>
-                <p class="text-pink-500 font-bold mb-4">${product.privateAmount}</p>
-                      <button 
-          class="order-btn w-full bg-pink-500 text-white py-2 px-4 rounded-lg hover:bg-pink-600 hover:shadow-lg hover:scale-105 transition-transform duration-300 ease-in-out"
-          data-product="${product.name}" 
-          data-type="${product.type}" 
-          data-price="${product.price}">
-          Pesan Disini
-        </button>
-  
+              <img src="img/${product.image}" alt="${product.name}" class="product-image mb-4">
+              <h3 class="font-bold text-xl mb-2 text-gray-800">${product.name}</h3>
+              <p class="text-gray-600 mb-2">${product.type}</p>
+              <p class="text-pink-500 font-bold mb-2">${product.price}</p>
+              <p class="text-gray-600 mb-2">${product.privatePrice}</p>
+              <p class="text-pink-500 font-bold mb-4">${product.privateAmount}</p>
+              <button class="order-btn w-full bg-pink-500 text-white py-2 px-4 rounded-lg hover:bg-pink-600 hover:shadow-lg hover:scale-105 transition-transform duration-300 ease-in-out"
+                data-product="${product.name}" data-type="${product.type}" data-price="${product.price}">
+                Pesan Disini
+              </button>
             `;
             container.appendChild(card);
           });
 
-          // Tambahkan event listener pada tombol Order Now
+          // Order Button Handler
           const orderButtons = document.querySelectorAll(".order-btn");
           orderButtons.forEach((button) => {
             button.addEventListener("click", (event) => {
               const productName = event.target.getAttribute("data-product");
               const productType = event.target.getAttribute("data-type");
               const productPrice = event.target.getAttribute("data-price");
-
-              // Dapatkan waktu lokal
               const currentHour = new Date().getHours();
               let greeting = "Selamat pagi";
               if (currentHour >= 12 && currentHour < 18) {
@@ -598,10 +651,7 @@
                 greeting = "Selamat malam";
               }
 
-              // Template pesan WhatsApp
               const message = `${greeting}, saya ingin memesan produk berikut:\n\nNama Produk: ${productName}\nLangganan: ${productType}\nHarga: ${productPrice}\n\nEmail: [isi email Anda]\nkalau ada pesanan yang ingin di ubah,silahkan ubah form datanya!!!`;
-
-              // Encode pesan dan arahkan ke WhatsApp
               const whatsappURL = `https://wa.me/${userPhoneNumber}?text=${encodeURIComponent(
                 message
               )}`;
@@ -617,24 +667,22 @@
             const faqItem = document.createElement("div");
             faqItem.className = "faq-item";
             faqItem.innerHTML = `
-                        <button class="w-full px-6 py-4 text-left text-white bg-gray-800/50 hover:bg-gray-700/50 flex justify-between items-center">
-                            <span>${item.question}</span>
-                            <i class="fas fa-chevron-down transition-transform"></i>
-                        </button>
-                        <div class="px-6 py-4 bg-gray-800/30 hidden">
-                            <p class="text-gray-300">${item.answer}</p>
-                        </div>
-                    `;
+              <button class="w-full px-6 py-4 text-left text-white bg-gray-800/50 hover:bg-gray-700/50 flex justify-between items-center">
+                <span>${item.question}</span>
+                <i class="fas fa-chevron-down transition-transform"></i>
+              </button>
+              <div class="px-6 py-4 bg-gray-800/30 hidden">
+                <p class="text-gray-300">${item.answer}</p>
+              </div>
+            `;
             container.appendChild(faqItem);
           });
 
-          // Add FAQ toggle functionality
+          // FAQ Toggle Functionality
           document.querySelectorAll("#faq button").forEach((button) => {
             button.addEventListener("click", () => {
               const content = button.nextElementSibling;
               const icon = button.querySelector("i");
-
-              // Toggle current content
               content.classList.toggle("hidden");
               icon.classList.toggle("rotate-180");
 
@@ -650,26 +698,17 @@
           });
         }
 
-        // Form Handling
+        // Form Handler
         const form = document.querySelector("form");
         if (form) {
           form.addEventListener("submit", (e) => {
             e.preventDefault();
-            const formData = new FormData(e.target);
-            const data = Object.fromEntries(formData.entries());
-
-            // Add your form submission logic here
-            console.log("Form submitted:", data);
-
-            // Reset form
-            e.target.reset();
-
-            // Show success message
             alert("Pesan Anda telah terkirim!");
+            e.target.reset();
           });
         }
 
-        // Smooth Scroll for all anchor links
+        // Smooth Scroll for Anchor Links
         document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
           anchor.addEventListener("click", function (e) {
             e.preventDefault();
@@ -700,11 +739,11 @@
           }
         });
 
-        // Initialize components
+        // Initialize Components
         generateProductCards();
         generateFAQ();
 
-        // Add animation for product cards
+        // Product Cards Animation
         const observerOptions = {
           threshold: 0.2,
           rootMargin: "0px 0px -50px 0px",
@@ -719,13 +758,56 @@
           });
         }, observerOptions);
 
-        // Observe product cards
         document.querySelectorAll(".product-card").forEach((card) => {
           card.style.opacity = "0";
           card.style.transform = "translateY(20px)";
           card.style.transition = "all 0.5s ease-out";
           observer.observe(card);
         });
+
+        // Active Navigation Link Handler
+        function setActiveNavLink() {
+          const sections = document.querySelectorAll("section[id]");
+          const navLinks = document.querySelectorAll(".nav-link");
+
+          window.addEventListener("scroll", () => {
+            let current = "";
+            sections.forEach((section) => {
+              const sectionTop = section.offsetTop;
+              if (pageYOffset >= sectionTop - 150) {
+                current = section.getAttribute("id");
+              }
+            });
+
+            navLinks.forEach((link) => {
+              link.classList.remove("active");
+              if (link.getAttribute("href").substring(1) === current) {
+                link.classList.add("active");
+              }
+            });
+          });
+        }
+
+        // Pisahkan handler untuk logo header (reload) dan footer (back to top)
+        const headerLogo = document.querySelector("nav .logo-refresh");
+        const footerLogo = document.querySelector("footer .back-to-top");
+
+        // Logo header untuk reload
+        headerLogo.addEventListener("click", () => {
+          window.location.reload();
+        });
+
+        // Logo footer untuk back to top
+        footerLogo.addEventListener("click", (e) => {
+          e.preventDefault();
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+          });
+        });
+
+        // Initialize Navigation
+        setActiveNavLink();
       });
     </script>
   </body>
