@@ -187,29 +187,36 @@
       </div>
     </div>
 
-    <!-- Hero Section -->
-    <section class="relative min-h-screen bg-black text-white pt-24">
-      <div
-        class="container mx-auto px-4 flex flex-col md:flex-row items-center">
-        <div class="w-full md:w-1/2 text-center md:text-left mb-8 md:mb-0">
-          <h1 class="text-4xl md:text-5xl font-bold mb-4">
-            Premium <span class="text-pink-500">Everyday</span>
-          </h1>
-          <p class="text-xl mb-8">Dengan layanan terpercaya</p>
-          <button
-            class="bg-pink-500 text-white px-8 py-3 rounded-full hover:bg-pink-600 transition-colors">
-            Get Started
-          </button>
-        </div>
-        <div class="w-full md:w-1/2">
-          <img
-            src="./img/about.png"
-            alt="Hero Illustration"
-            class="w-full" />
-        </div>
+    <section class="relative min-h-screen bg-black text-white overflow-hidden">
+  <!-- Wave -->
+  <img src="./img/wave.png" alt="Wave" class="absolute bottom-0 left-0 w-full z-0">
+
+  <!-- Container -->
+  <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between relative z-10 pt-24 md:pt-32">
+    <!-- Gambar -->
+    <div class="w-full md:w-1/2 flex justify-center mb-8 md:mb-0">
+      <img src="./img/about.png" alt="Hero Illustration" class="w-3/4 md:w-full max-w-md md:max-w-lg">
+    </div>
+
+    <!-- Teks dan Tombol -->
+    <div class="w-full md:w-1/2 text-center md:text-left space-y-6 md:space-y-8">
+      <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">
+        Premium <span class="text-pink-500">Everyday</span>
+      </h1>
+      <p class="text-lg md:text-xl leading-relaxed text-gray-300">
+        Dengan layanan terpercaya untuk setiap kebutuhan Anda.
+      </p>
+      <div class="flex justify-center md:justify-start">
+        <a href="#product" class="bg-pink-500 text-white px-8 py-3 rounded-full shadow-lg hover:bg-pink-600 transition-transform transform hover:scale-105">
+          Get Started
+        </a>
       </div>
-      <img src="./img/wave.png" alt="Wave" class="hero-wave" />
-    </section>
+      
+    </div>
+  </div>
+</section>
+
+    
     <!-- Product Section -->
     <section id="product" class="py-20 bg-black">
       <div class="container mx-auto px-4">
@@ -309,32 +316,59 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-black py-8 border-t border-gray-800">
+    <footer class="bg-black py-12 border-t border-gray-800">
       <div class="container mx-auto px-4">
-        <div
-          class="flex justify-between items-center flex-col md:flex-row gap-4">
-          <img
-            src="./img/Logo-premium.png"
-            alt="Logo"
-            class="h-16 md:h-20" />
-          <div class="flex gap-4">
-            <a
-              href="https://www.instagram.com/premiumeveryday_/"
-              class="text-white hover:text-pink-500 transition-colors">
-              <i class="fab fa-instagram text-2xl"></i>
-            </a>
-            <a
-              href="#"
-              class="text-white hover:text-pink-500 transition-colors">
-              <i class="fab fa-whatsapp text-2xl"></i>
-            </a>
+        <!-- Grid Footer -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-white">
+          <!-- About Us -->
+          <div>
+            <h3 class="text-lg font-bold mb-4">About Us</h3>
+            <p class="text-gray-400 leading-relaxed">
+              PremiumEveryday <br>
+              MURAH BANGET!!! <br>
+              Promo TERBATAS! DM CEPAT SEBELUM HABIS!!!🔥
+            </p>
+          </div>
+    
+          <!-- Social Media -->
+          <div>
+            <h3 class="text-lg font-bold mb-4">Sosial Media</h3>
+            <div class="flex gap-4">
+              <a
+                href="https://www.instagram.com/premiumeveryday_/"
+                class="text-white hover:text-pink-500 transition-colors">
+                <i class="fab fa-instagram text-2xl"></i>
+              </a>
+              <a
+                href="#"
+                class="text-white hover:text-pink-500 transition-colors">
+                <i class="fab fa-whatsapp text-2xl"></i>
+              </a>
+            </div>
+          </div>
+    
+          <!-- Navigation Links -->
+          <div>
+            <h3 class="text-lg font-bold mb-4">Navigation</h3>
+            <ul class="space-y-2">
+              <li><a href="#product" class="text-gray-400 hover:text-pink-500">Product</a></li>
+              <li><a href="#timeline" class="text-gray-400 hover:text-pink-500">Timeline</a></li>
+              <li><a href="#faq" class="text-gray-400 hover:text-pink-500">Faq</a></li>
+              <li><a href="#contact" class="text-gray-400 hover:text-pink-500">Contact</a></li>
+            </ul>
+          </div>
+    
+          <!-- Logo and Branding -->
+          <div class="text-center md:text-left">
+            <img src="./img/Logo-premium.png" alt="Logo" class="h-16 mx-auto md:mx-0">
+            <p class="text-gray-400 mt-4">
+              © 2025 PremiumEveryday. All Rights Reserved.
+            </p>
           </div>
         </div>
-        <p class="text-center text-gray-500 mt-8">
-          © 2024 Premium Service. All Rights Reserved.
-        </p>
       </div>
     </footer>
+    
     <script>
       // Product Data
       const products = [
@@ -500,23 +534,54 @@
         // Generate Product Cards
         function generateProductCards() {
           const container = document.getElementById("product-container");
+          const userPhoneNumber = "6285158442747"; // Ganti dengan nomor WhatsApp Anda
+        
           products.forEach((product) => {
             const card = document.createElement("div");
             card.className = "product-card";
             card.innerHTML = `
-                        <img src="img/${product.image}" alt="${product.name}" class="product-image mb-4">
-                        <h3 class="font-bold text-xl mb-2 text-gray-800">${product.name}</h3>
-                        <p class="text-gray-600 mb-2">${product.type}</p>
-                        <p class="text-pink-500 font-bold mb-2">${product.price}</p>
-                        <p class="text-gray-600 mb-2">${product.privatePrice}</p>
-                        <p class="text-pink-500 font-bold mb-4">${product.privateAmount}</p>
-                        <button class="w-full bg-pink-500 text-white py-2 px-4 rounded-lg hover:bg-pink-600 transition-colors">
-                            Order Now
-                        </button>
-                    `;
+                <img src="img/${product.image}" alt="${product.name}" class="product-image mb-4">
+                <h3 class="font-bold text-xl mb-2 text-gray-800">${product.name}</h3>
+                <p class="text-gray-600 mb-2">${product.type}</p>
+                <p class="text-pink-500 font-bold mb-2">${product.price}</p>
+                <p class="text-gray-600 mb-2">${product.privatePrice}</p>
+                <p class="text-pink-500 font-bold mb-4">${product.privateAmount}</p>
+                <button class="order-btn w-full bg-pink-500 text-white py-2 px-4 rounded-lg hover:bg-pink-600 transition-colors" data-product="${product.name}" data-type="${product.type}" data-price="${product.price}">
+                    Order Now
+                </button>
+            `;
             container.appendChild(card);
           });
+        
+          // Tambahkan event listener pada tombol Order Now
+          const orderButtons = document.querySelectorAll(".order-btn");
+          orderButtons.forEach((button) => {
+            button.addEventListener("click", (event) => {
+              const productName = event.target.getAttribute("data-product");
+              const productType = event.target.getAttribute("data-type");
+              const productPrice = event.target.getAttribute("data-price");
+        
+              // Dapatkan waktu lokal
+              const currentHour = new Date().getHours();
+              let greeting = "Selamat pagi";
+              if (currentHour >= 12 && currentHour < 18) {
+                greeting = "Selamat siang";
+              } else if (currentHour >= 18) {
+                greeting = "Selamat malam";
+              }
+        
+              // Template pesan WhatsApp
+              const message = `${greeting}, saya ingin memesan produk berikut:\n\nNama Produk: ${productName}\nLangganan: ${productType}\nHarga: ${productPrice}\n\nEmail: [isi email Anda]\nkalau ada pesanan yang ingin di ubah silahkan ubah form datanya!!!`;
+        
+              // Encode pesan dan arahkan ke WhatsApp
+              const whatsappURL = `https://wa.me/${userPhoneNumber}?text=${encodeURIComponent(
+                message
+              )}`;
+              window.open(whatsappURL, "_blank");
+            });
+          });
         }
+        
 
         // Generate FAQ Accordions
         function generateFAQ() {
