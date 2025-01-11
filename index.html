@@ -10,7 +10,8 @@
 
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
@@ -145,17 +146,32 @@
         width: 100%;
       }
     </style>
+
+    <!-- Favicon untuk browser modern -->
+    <link rel="icon" type="image/png" href="./img/Logo-premium.png" />
+
+    <!-- Favicon untuk iOS -->
+    <link rel="apple-touch-icon" href="./img/Logo-premium.png" />
+
+    <!-- Favicon untuk IE -->
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="./img/Logo-premium.png"
+    />
   </head>
   <body>
     <!-- Navbar -->
     <nav class="fixed w-full z-50 bg-black/80 backdrop-blur-sm">
       <div
-        class="container mx-auto px-4 py-3 flex justify-between items-center">
+        class="container mx-auto px-4 py-3 flex justify-between items-center"
+      >
         <a href="javascript:void(0)" class="logo-refresh">
           <img
             src="./img/Logo-premium.png"
             alt="Logo"
-            class="h-16 mx-auto md:mx-0 cursor-pointer hover:scale-105 transition-transform" />
+            class="h-16 mx-auto md:mx-0 cursor-pointer hover:scale-105 transition-transform"
+          />
         </a>
 
         <!-- Desktop Menu -->
@@ -228,19 +244,23 @@
       <img
         src="./img/wave.png"
         alt="Wave"
-        class="absolute bottom-0 left-0 w-full z-0" />
+        class="absolute bottom-0 left-0 w-full z-0"
+      />
 
       <div
-        class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between relative z-10 pt-24 md:pt-32">
+        class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between relative z-10 pt-24 md:pt-32"
+      >
         <div class="w-full md:w-1/2 flex justify-center mb-8 md:mb-0">
           <img
             src="./img/amico.png"
             alt="Hero Illustration"
-            class="w-3/4 md:w-full max-w-md md:max-w-lg" />
+            class="w-3/4 md:w-full max-w-md md:max-w-lg"
+          />
         </div>
 
         <div
-          class="w-full md:w-1/2 text-center md:text-left space-y-6 md:space-y-8">
+          class="w-full md:w-1/2 text-center md:text-left space-y-6 md:space-y-8"
+        >
           <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">
             Premium <span class="text-pink-500">Everyday</span>
           </h1>
@@ -249,11 +269,11 @@
           </p>
           <div class="flex justify-center md:justify-start">
             <a
-  href="#product"
-  class="bg-pink-500 text-white px-8 py-3 rounded-full shadow-lg hover:bg-pink-600 transition-transform transform hover:scale-105 flex items-center justify-center gap-2">
-  <i class="fas fa-shopping-cart"></i> Pesan Disini
-</a>
-
+              href="#product"
+              class="bg-pink-500 text-white px-8 py-3 rounded-full shadow-lg hover:bg-pink-600 transition-transform transform hover:scale-105 flex items-center justify-center gap-2"
+            >
+              <i class="fas fa-shopping-cart"></i> Pesan Disini
+            </a>
           </div>
         </div>
       </div>
@@ -266,7 +286,8 @@
         </h2>
         <div
           id="product-container"
-          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"></div>
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+        ></div>
       </div>
     </section>
 
@@ -333,25 +354,28 @@
             name="from_name"
             placeholder="Nama Anda"
             required
-            class="w-full px-4 py-3 rounded-lg bg-gray-800/50 backdrop-blur-sm text-white border border-gray-700 focus:border-pink-500 focus:outline-none" />
+            class="w-full px-4 py-3 rounded-lg bg-gray-800/50 backdrop-blur-sm text-white border border-gray-700 focus:border-pink-500 focus:outline-none"
+          />
           <input
             type="email"
             name="reply_to"
             placeholder="Email Anda"
             required
-            class="w-full px-4 py-3 rounded-lg bg-gray-800/50 backdrop-blur-sm text-white border border-gray-700 focus:border-pink-500 focus:outline-none" />
+            class="w-full px-4 py-3 rounded-lg bg-gray-800/50 backdrop-blur-sm text-white border border-gray-700 focus:border-pink-500 focus:outline-none"
+          />
           <textarea
             name="message"
             placeholder="Pesan Anda"
             required
             rows="4"
-            class="w-full px-4 py-3 rounded-lg bg-gray-800/50 backdrop-blur-sm text-white border border-gray-700 focus:border-pink-500 focus:outline-none"></textarea>
-            <button
+            class="w-full px-4 py-3 rounded-lg bg-gray-800/50 backdrop-blur-sm text-white border border-gray-700 focus:border-pink-500 focus:outline-none"
+          ></textarea>
+          <button
             type="submit"
-            class="w-full bg-pink-500 text-white py-3 rounded-lg hover:bg-pink-600 transition-colors flex items-center justify-center gap-2">
+            class="w-full bg-pink-500 text-white py-3 rounded-lg hover:bg-pink-600 transition-colors flex items-center justify-center gap-2"
+          >
             <i class="fas fa-paper-plane"></i> Kirim Pesan
           </button>
-          
         </form>
       </div>
     </section>
@@ -375,15 +399,16 @@
             <div class="flex justify-center md:justify-start gap-4">
               <a
                 href="https://www.instagram.com/premiumeveryday_/"
-                class="text-white hover:text-pink-500 transition-colors">
+                class="text-white hover:text-pink-500 transition-colors"
+              >
                 <i class="fab fa-instagram text-2xl"></i>
               </a>
               <a
-              href="https://wa.me/6285158442747?text=Hallo,%20saya%20mau%20pesan%20produk!"
-              class="text-white hover:text-pink-500 transition-colors">
-              <i class="fab fa-whatsapp text-2xl"></i>
-            </a>
-
+                href="https://wa.me/6285158442747?text=Hallo,%20saya%20mau%20pesan%20produk!"
+                class="text-white hover:text-pink-500 transition-colors"
+              >
+                <i class="fab fa-whatsapp text-2xl"></i>
+              </a>
             </div>
           </div>
 
@@ -416,7 +441,8 @@
               <img
                 src="./img/Logo-premium.png"
                 alt="Logo"
-                class="h-16 mx-auto md:mx-0 cursor-pointer hover:scale-105 transition-transform" />
+                class="h-16 mx-auto md:mx-0 cursor-pointer hover:scale-105 transition-transform"
+              />
             </a>
             <p class="text-gray-400 mt-4">
               © 2025 PremiumEveryday. All Rights Reserved.
