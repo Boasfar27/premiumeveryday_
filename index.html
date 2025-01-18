@@ -3,13 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Premium Everyday menyediakan akun premium eksklusif dengan harga terjangkau. Temukan layanan terbaik untuk hiburan Anda di PremiumEveryday.my.id.">
-<meta name="keywords" content="Premium Everyday, akun premium, langganan murah, hiburan online">
-<meta name="author" content="Premium Everyday">
-<meta property="og:title" content="Premium Everyday - Layanan Akun Premium">
-<meta property="og:description" content="Dapatkan akses ke akun premium eksklusif untuk hiburan terbaik. Kunjungi PremiumEveryday.my.id sekarang!">
-<meta property="og:url" content="https://premiumeveryday.my.id">
-<meta property="og:type" content="website">
+    <meta
+      name="description"
+      content="Premium Everyday menyediakan akun premium eksklusif dengan harga terjangkau. Temukan layanan terbaik untuk hiburan Anda di PremiumEveryday.my.id."
+    />
+    <meta
+      name="keywords"
+      content="Premium Everyday, akun premium, langganan murah, hiburan online"
+    />
+    <meta name="author" content="Premium Everyday" />
+    <meta
+      property="og:title"
+      content="Premium Everyday - Layanan Akun Premium"
+    />
+    <meta
+      property="og:description"
+      content="Dapatkan akses ke akun premium eksklusif untuk hiburan terbaik. Kunjungi PremiumEveryday.my.id sekarang!"
+    />
+    <meta property="og:url" content="https://premiumeveryday.my.id" />
+    <meta property="og:type" content="website" />
 
     <title>Premium Service</title>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -472,17 +484,17 @@
         },
         {
           name: "YouTube",
-          type: "1 bulan",
+          type: "sharing 1 bulan",
           price: "Rp 9.999",
-          privatePrice: "3 bulan",
+          privatePrice: "private 3 bulan",
           privateAmount: "Rp 29.999",
           image: "youtube.png",
         },
         {
           name: "Spotify",
-          type: "1 bulan",
+          type: "sharing 1 bulan",
           price: "Rp 19.999",
-          privatePrice: "3 bulan",
+          privatePrice: "private 3 bulan",
           privateAmount: "Rp 59.999",
           image: "spotify.png",
         },
@@ -496,9 +508,9 @@
         },
         {
           name: "Apple Music",
-          type: "1 bulan",
+          type: "sharing 1 bulan",
           price: "Rp 19.999",
-          privatePrice: "3 bulan",
+          privatePrice: "private 3 bulan",
           privateAmount: "Rp 59.999",
           image: "applemusic.png",
         },
@@ -638,6 +650,7 @@
               <p class="text-pink-500 font-bold mb-4">${product.privateAmount}</p>
               <button
   class="order-btn w-full bg-pink-500 text-white py-2 px-4 rounded-lg hover:bg-pink-600 hover:shadow-lg hover:scale-105 transition-transform duration-300 ease-in-out flex items-center justify-center gap-2"
+  onclick="window.location.href='payment.html?product=${product.name}'"
   data-product="${product.name}"
   data-type="${product.type}"
   data-price="${product.price}">
@@ -854,7 +867,3 @@
     </script>
   </body>
 </html>
-
-
-//belum masuk kedalam database
-add data belum 
